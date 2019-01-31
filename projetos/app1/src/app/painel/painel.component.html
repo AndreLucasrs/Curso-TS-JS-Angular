@@ -2,7 +2,7 @@
     <div class="jumbotron">
         <div class="row">
             <div class="col-md-6">
-                <app-progresso></app-progresso>
+                <app-progresso [progresso]="progresso"></app-progresso>
             </div>
             <div class="col-md-6">
                 <div class="d-flex justify-content-end">
@@ -20,6 +20,7 @@
                         class="form-control" 
                         rows="3"
                         (input)="atualizaResposta($event)"
+                        [value]="resposta"
                         >
                     </textarea>
                 </div>
