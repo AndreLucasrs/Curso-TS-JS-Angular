@@ -10,6 +10,7 @@ import { Oferta } from "../shared/oferta.model";
 })
 export class HomeComponent implements OnInit {
 
+  //ng g c restaurantes --skipTests=false - para criar componentes novos
   public ofertas: Array<Oferta>;
 
   constructor(private ofertasService: OfertasService) { }
@@ -17,11 +18,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     //this.ofertas = this.ofertasService.getOfertas();
-    this.ofertasService.getOfertas2()
+    this.ofertasService.getOfertas()
       .then(
         (ofertas: Array<Oferta>) => { 
-          this.ofertas = ofertas
-          console.log("A função resolve() foi resolvida depois de 3 segundos");
+          this.ofertas = ofertas;
         }
       )
       .catch(
