@@ -11,6 +11,7 @@ import { Oferta } from "../shared/oferta.model";
 export class HomeComponent implements OnInit {
 
   //ng g c restaurantes --skipTests=false - para criar componentes novos
+  //json-server --watch banco-de-dados.json - para criar levar a api-fake para test
   public ofertas: Array<Oferta>;
 
   constructor(private ofertasService: OfertasService) { }
