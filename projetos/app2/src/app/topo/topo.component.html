@@ -7,14 +7,20 @@
           </a>
         </div>
         <div class="col-md-6">
+          <!--{{ofertas2 | json}}-->
           <input type="text" 
             class="form-control" 
             placeholder="Pesquisa por ofertas..."
             #termoDaPesquisa
             (keyup)="pesquisa(termoDaPesquisa.value)"
           >
-          <ul class="list-group" style="position:absolute">
-              <li class="list-group-item" *ngFor="let oferta of ofertas2" >{{oferta.titulo}}</li>
+          <ul class="list-group" style="position:absolute; z-index: 999;">
+              <!-- async(ira agir como um subscribe do obervable) irá esperar os objetos de ofertas serem carregar e ira mostra-->
+              <li class="list-group-item" *ngFor="let oferta of ofertas | async" >
+                <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">
+                  {{oferta.titulo | descricaoReduzida:15 | uppercase}}
+                </a>  
+              </li>
           </ul>
         </div>
         <div class="col-md-2">
