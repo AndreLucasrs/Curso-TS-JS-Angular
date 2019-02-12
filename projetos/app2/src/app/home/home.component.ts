@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OfertasService } from "../ofertas.service";
-import { Oferta } from "../shared/oferta.model";
+import { OfertasService } from '../ofertas.service';
+import { Oferta } from '../shared/oferta.model';
 
 @Component({
   selector: 'app-home',
@@ -10,24 +10,24 @@ import { Oferta } from "../shared/oferta.model";
 })
 export class HomeComponent implements OnInit {
 
-  //ng g c restaurantes --skipTests=false - para criar componentes novos
-  //json-server --watch banco-de-dados.json - para criar levar a api-fake para test
+  // ng g c restaurantes --skipTests=false - para criar componentes novos
+  // json-server --watch banco-de-dados.json - para criar levar a api-fake para test
   public ofertas: Array<Oferta>;
 
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
 
-    //this.ofertas = this.ofertasService.getOfertas();
+    // this.ofertas = this.ofertasService.getOfertas();
     this.ofertasService.getOfertas()
       .then(
-        (ofertas: Array<Oferta>) => { 
+        (ofertas: Array<Oferta>) => {
           this.ofertas = ofertas;
         }
       )
       .catch(
-        (param:any) => console.log(param)
-      )
+        (param: any) => console.log(param)
+      );
   }
 
 }
