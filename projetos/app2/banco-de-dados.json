@@ -192,6 +192,20 @@
       "complemento": "casa",
       "formaPagamento": "dinheiro",
       "id": 1
+    },
+    {
+      "endereco": "Rua x",
+      "numero": "12",
+      "complemento": "10",
+      "formaPagamento": "dinheiro",
+      "id": 2
+    },
+    {
+      "endereco": "Rua posto",
+      "numero": "5",
+      "complemento": "casa",
+      "formaPagamento": "debito",
+      "id": 3
     }
   ]
 }
