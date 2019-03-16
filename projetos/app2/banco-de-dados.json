@@ -206,6 +206,20 @@
       "complemento": "casa",
       "formaPagamento": "debito",
       "id": 3
+    },
+    {
+      "endereco": "Quadra 04",
+      "numero": "05",
+      "complemento": "Casa",
+      "formaPagamento": "dinheiro",
+      "id": 4
+    },
+    {
+      "endereco": "Quadra 04",
+      "numero": "7",
+      "complemento": "casa",
+      "formaPagamento": "debito",
+      "id": 5
     }
   ]
 }
