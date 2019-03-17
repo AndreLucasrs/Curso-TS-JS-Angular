@@ -220,6 +220,27 @@
       "complemento": "casa",
       "formaPagamento": "debito",
       "id": 5
+    },
+    {
+      "endereco": "Rua teste",
+      "numero": "55",
+      "complemento": "quarto",
+      "formaPagamento": "debito",
+      "id": 6
+    },
+    {
+      "endereco": "Rua teste",
+      "numero": "55",
+      "complemento": "quarto",
+      "formaPagamento": "debito",
+      "id": 7
+    },
+    {
+      "endereco": "rua vai la",
+      "numero": "33",
+      "complemento": "aonde",
+      "formaPagamento": "dinheiro",
+      "id": 8
     }
   ]
 }
