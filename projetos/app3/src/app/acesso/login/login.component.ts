@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import * as firebase from 'firebase';
+import {AutenticacaoService} from '../../autenticacao.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  @Output() public exibirPainel: EventEmitter<string> = new EventEmitter();
+
+  public formulario: FormGroup = new FormGroup({
+    'email': new FormControl(),
+    'senha': new FormControl()
+  });
+  constructor(
+    private autenticacao: AutenticacaoService
+  ) { }
 
   ngOnInit() {
   }
 
+  public exibirPainelCadastro(): void {
+    this.exibirPainel.emit('cadastro');
+  }
+
+  public autentincar(): void {
+    this.autenticacao.autenticar(this.formulario.value.email, this.formulario.value.senha);
+  }
 }
