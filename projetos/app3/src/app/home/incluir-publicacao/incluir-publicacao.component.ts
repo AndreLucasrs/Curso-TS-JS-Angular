@@ -11,6 +11,7 @@ import * as firebase from 'firebase';
 export class IncluirPublicacaoComponent implements OnInit {
 
   public email: string;
+  private imagem: any;
 
   public formulario: FormGroup = new FormGroup({
     titulo: new FormControl()
@@ -27,7 +28,12 @@ export class IncluirPublicacaoComponent implements OnInit {
   public publicar(): void {
     this.bdService.publicar({
       email: this.email,
-      titulo: this.formulario.value.titulo
+      titulo: this.formulario.value.titulo,
+      imagem: this.imagem[0]
     });
+  }
+
+  public preparaImagemUpload(event: Event): void {
+    this.imagem = ( event.target as HTMLInputElement).files;
   }
 }
